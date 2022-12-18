@@ -1,0 +1,58 @@
+{
+  "name": "payment_server",
+  "version": "1.0.0",
+  "description": "Payment server to simplify creating and handling of orders",
+  "main": "src/app.ts",
+  "private": false,
+  "license": "MIT",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "nodemon --config nodemon.json src/app.ts",
+    "webpack:build": "webpack --mode production",
+    "prettier:check": "prettier --check \"src\"",
+    "prettier:fix": "prettier --write \"src\"",
+    "lint:check": "eslint 'src/**/*.{ts,tsx}'",
+    "lint:fix": "eslint 'src/**/*.{ts,tsx}' --fix",
+    "start": "NODE_ENV=production node build/index.js",
+    "mongo:start": "brew services start mongodb/brew/mongodb-community",
+    "mongo:stop": "brew services stop mongodb/brew/mongodb-community",
+    "test": "jest"
+  },
+  "author": "Ivan Admaers (https://ivanadmaers.com)",
+  "engines": {
+    "node": "16.13.0",
+    "npm": "8.1.0"
+  },
+  "dependencies": {
+    "axios": "^1.1.3",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "helmet": "^6.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.7.0",
+    "multer": "^1.4.5-lts.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.14",
+    "@types/jest": "^29.2.0",
+    "@types/jsonwebtoken": "^8.5.9",
+    "@types/multer": "^1.4.7",
+    "@typescript-eslint/eslint-plugin": "^5.41.0",
+    "@typescript-eslint/parser": "^5.41.0",
+    "eslint": "^8.26.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^27.1.3",
+    "jest": "^29.2.2",
+    "nodemon": "^2.0.20",
+    "prettier": "^2.7.1",
+    "ts-jest": "^29.0.3",
+    "ts-loader": "^9.4.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.3",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-node-externals": "^3.0.0"
+  }
+}

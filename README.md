@@ -116,18 +116,18 @@ After the payment server gets a notification from a payment system, does checks 
 const { token } = req.body;
 
 if (token === undefined) {
-  return req.json({ error: 'token is undefined' });
+  return res.json({ error: 'token is undefined' });
 }
 
 // TokenService code example is above
 const tokenData = TokenService.verify(token) as { orderId: string };
 
 if (tokenData === null) {
-  return req.json({ error: 'token is invalid' });
+  return res.json({ error: 'token is invalid' });
 }
 
 if (tokenData.orderId === undefined) {
-  return req.json({ error: 'token orderId is invalid' });
+  return res.json({ error: 'token orderId is invalid' });
 }
 
 // All good. Handle the order to make your client happy
